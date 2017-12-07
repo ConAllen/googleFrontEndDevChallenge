@@ -394,3 +394,224 @@ function laugh (num) {
     };
     return ha + "!";
 } console.log(laugh(3));
+
+
+
+
+
+/*  Prime Number Checker */
+
+
+
+function isPrime(integer) {
+
+     for(var x = 2; x < integer; x ++) {
+          if (integer % x === 0) {
+               console.log(integer + ' is divisble by ' + x );
+
+                   return false;
+
+          }
+       return true;
+     }
+
+   }
+
+
+
+
+
+   function addTen(x) {
+  return x + 10;
+}
+
+function divideByThree(y) {
+  return y / 3;
+}
+
+var result = addTen(2);
+console.log(divideByThree(result));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Scope Librarian Example
+
+TIP: The JavaScript language is constantly improving. One of these updates introduces a new type of scope, called Block scope. Check out our ES6 course to learn more!
+Q 1 OF 2
+
+Which of these variables a, b, c, or d, is defined in the global scope?*/
+
+var a = 1;
+function x() {
+  var b = 2;
+  function y() {
+    var c = 3;
+    function z() {
+      var d = 4;
+    }
+    z();
+  }
+  y();
+}
+
+x();
+
+
+// Where can you print out the value of variable c without resulting in an error?
+
+var a = 1;
+function x() {
+  var b = 2;
+  function y() {
+    var c = 3;
+    function z() {
+      var d = 4;
+    }
+    z();
+  }
+  y();
+}
+
+x();
+
+
+
+/////////////////////
+
+function findAvg(a, b) {
+
+var answer = (a + b ) / 2;
+
+return answer;
+
+}
+
+findAvg(10,100);
+
+
+function sayHi(name) {
+
+var greeting = "hello";
+console.log( greeting + " " name);
+
+}
+
+sayHi(con);
+
+
+/*
+ * Programming Quiz: Build A Triangle (5-3)
+ */
+
+// creates a line of * for a given length
+function makeLine(length) {
+    var line = "";
+    for (var j = 1; j <= length; j++) {
+        line += "* ";
+    }
+    return line + "\n";
+}
+
+function buildTriangle(width){
+    var triangle = "";
+    for(var i = 1; i <= width; i ++) {
+     triangle += makeLine(i);
+
+    }
+    return triangle;
+}
+
+console.log(buildTriangle(10));
+
+// your code goes here.  Make sure you call makeLine() in your own code.
+
+
+
+
+/*
+ * Programming Quiz: Reverse string function
+*/
+
+
+function reverseString(reverseMe) {
+
+  var reversed = "";
+
+  for (var i = reverseMe.lenght - 1; i >= 0; i --) {
+
+      reversed += reverseMe[i];
+
+  };
+
+return reversed;
+
+}
+console.log(reverseString("ConAllen"));
+reverseMe("ConAllen");
+
+// declare
+// variable the string
+// loop over the string
+//
+
+/*
+ * Passing functions into functions
+*/
+
+var catSays = function(max) {
+  var catMessage = "";
+  for (var i = 0; i < max; i++) {
+    catMessage += "meow ";
+  }
+  return catMessage;
+};
+
+// function declaration helloCat accepting a callback
+function helloCat(callbackFunc) {
+  return "Hello " + callbackFunc(3);
+}
+
+// pass in catSays as a callback function
+helloCat(catSays);
+
+
+// Function expression that assigns the function displayFavorite
+// to the variable favoriteMovie
+var favoriteMovie = function displayFavorite(movieName) {
+  console.log("My favorite movie is " + movieName);
+};
+
+// Function declaration that has two parameters: a function for displaying
+// a message, along with a name of a movie
+function movies(messageFunction, name) {
+  messageFunction(name);
+}
+
+// Call the movies function, pass in the favoriteMovie function and name of movie
+movies(favoriteMovie, "Finding Nemo");
+
+
+
+
+var favoriteMovie = function displayMovie(movieName) {
+
+      console.log( "My fav movie is "  + movieName);
+};
+
+function movies(messageFunction, name ) {
+  messageFunction(name);
+
+}
+
+movies(favoriteMovie, "blade runner");
