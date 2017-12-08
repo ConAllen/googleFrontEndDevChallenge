@@ -667,3 +667,21 @@ function helloCat(callbackFunc) {
 
 // pass in catSays as a callback function
 helloCat(catSays);
+
+
+
+
+
+var conSays = function(num){
+  var conMsg = "";
+  for(var i = 0; i < num; i++){
+    conMsg += " absolute rup "
+  };
+  return conMsg;
+}
+
+function whatsUp(callBackFunct) {
+  return "wan " + callBackFunct(4);
+}
+
+whatsUp(conSays);
