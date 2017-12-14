@@ -1,912 +1,107 @@
-/*
- * Programming Quiz: Even or Odd (3-2)
- *
- * Write an if...else statement that prints `even` if the
- * number is even and prints `odd` if the number is odd.
- *
- * Note - make sure to print only the string "even" or the string "odd"
- */
 
-// change the value of `number` to test your if...else statement
-var number = 2;
+//// for loops and reverse loops ///
 
-if ( number % 2 === 0) {
-    console.log("even");
 
-} else {
-console.log("odd");
+var names = ["con", "john", "paddy", "snowy"];
+
+
+for(var i = 0; i < names.length; i++) {
+  console.log(names[i].reverse);
 }
 
-/////////////////////////////////////////////////////////////////////////////
-
-/*
- * Programming Quiz: Musical Groups (3-3)
- */
-
-
-var musicians = 20;
-if (musicians === 1) {
-    console.log("solo");
-}// your code goes here
-else if (musicians === 2) {
-    console.log("duet");
-}// your code goes here
-else if (musicians === 3) {
-    console.log("trio");
-}// your code goes here
-else if (musicians === 4) {
-    console.log("quartet");
-}// your code goes here
-else if (musicians > 4) {
-    console.log("this is a large group");
-}// your code goes here
-
-else {
-    console.log("not a group");
+for( var i = names.length - 1; i >= 0; i--){
+  console.log(names[i]);
 }
 
-/////////////////////////////////////////////////////////////////////////////
 
+
+
+///// age functions //////
+
+
+function calculateAge(yearOfBirth){
+   var age = 2017 - yearOfBirth;
+
+   return age;
+
+}
+
+var conAge = calculateAge(1988);
+var rigAge = calculateAge(1999);
+
+// console.log(rigAge);
+
+
+function retirement(name, year) {
+
+ var age = calculateAge(year)
+ var retirement = 65 - age;
+
+ if (retirement >= 0) {
+   console.log(name + " retires " + retirement + "years");
+ } else {
+      console.log(name + " is already retired ");
+ }
+}
+
+retirement('con', 1988);
+retirement('mom', 1944);
+
+
+
+//////////////////////////////////////
+// CODING CHALLENGE 2
 
 /*
- * Programming Quiz: Murder Mystery (3-4)
- */
+1. Create an array with some years where persons were born
+2. Create an empty array (just [] )
+3. Use a loop to fill the array with the ages of the persons
+4. Use another loop to log into the console whether each person is of full age
+(18 or older), as well as their age
 
-// change the value of `room` and `suspect` to test your code
+5. Finally, create a function called printFullAge which receives the array of years as an argument, executes the steps 2., 3. and 4. and returns an array of true/false boolean values: true if the person is of full age (>= 18 years) and false if not (< 18 years)
+6. Call the function with two different arrays and store the results in two variables: full_1 and full_2
 
-var room = "gallery";
-var suspect = "Ms. Van Cleve";
+Example input:  [1965, 2008, 1992]
+Example output: [true, false, true]
 
-var weapon = "";
-var solved = false;
+Hint: you can use a loop not only to read from an array, like y[i], but also to set values in an array, like y[i] = ... You can also use the specific array methods.
+*/
 
-    if (room === "gallery") {
-       weapon = "trophy";
-          if (suspect === "Ms. Van Cleve") {
-          solved = true;
-        }
-    } else if (room === "dining room") {
-        weapon = "knife";
-          if (suspect === "Mr. Parkes") {
-          solved = true;
-          }
-    } else if (room === "billiards room") {
-        weapon = "pool stick";
-          if (suspect = "Mrs. Sparr") {
-          solved = true;
-          }
-    } else {
-       weapon = "poison";
-          if (suspect === "Mr. Kalehoff") {
-          solved = true;
-          }
-        }
 
-       if (solved) {
-  	       console.log(suspect +" did it in the "+ room + " with the "+ weapon +"!");
-  }
-  /////////////////////////////////////////////////////////////////////////////
 
-  /*
-   * Programming Quiz - Checking Your Balance (3-5)
-   */
 
-  // change the values of `balance`, `checkBalance`, and `isActive` to test your code
-  var balance = 325.00;
-  var checkBalance = true;
-  var isActive = false;
 
-  if (!checkBalance) {
-      console.log("Thank you. Have a nice day!");
-  } else if (isActive && balance > 0) {
-      console.log("Your balance is $" + balance.toFixed(2) + ".");
-  } else if (!isActive) {
-      console.log("Your account is no longer active.");
-  } else if (balance === 0) {
-      console.log("Your account is empty.");
-  } else if (balance < 0) {
-       console.log("Your balance is negative. Please contact bank.")
+
+function printFullAge(years) {
+
+
+  var ages = [];
+  var fullAges = [];
+
+  for(var i = 0; i < years.length; i ++) {
+     ages[i] = 2017 - years[i];
   }
 
-  /////////////////////////////////////////////////////////////////////////////
 
-  /*
-   * Programming Quiz: Ice Cream (3-6)
-   *
-   * Write a single if statement that logs out the message:
-   *
-   * "I'd like two scoops of __________ ice cream in a __________ with __________."
-   *
-   * ...only if:
-   *   - flavor is "vanilla" or "chocolate"
-   *   - vessel is "cone" or "bowl"
-   *   - toppings is "sprinkles" or "peanuts"
-   *
-   * We're only testing the if statement and your boolean operators.
-   * It's okay if the output string doesn't match exactly.
-   */
+  for(i=0; i < ages.length; i++) {
 
-  // change the values of `flavor`, `vessel`, and `toppings` to test your code
-  var flavor = "strawberry";
-  var vessel = "cone";
-  var toppings = "cookies";
+    if(ages[i] >= 18) {
 
-  // Add your code here
-
-  if (((flavor === "vanilla" || flavor === "chocolate") &&
-      (vessel === "cone" || vessel === "bowl") &&
-      (toppings === "sprinkles" || toppings === "peanuts"))){
-          console.log("I'd like two scoops of " + flavor + " ice cream in a " + vessel + " with " + toppings + ".");
-      }
-
-/////////////////////////////////////////////////////////////////////////////
-
-/*
- * Programming Quiz: What do I Wear? (3-7)
- */
-
-// change the values of `shirtWidth`, `shirtLength`, and `shirtSleeve` to test your code
-var shirtWidth = 24;
-var shirtLength = 30;
-var shirtSleeve = 8.71;
-
-// your code goes here
-if ((shirtWidth >= 18 && shirtWidth < 20) && (shirtLength >= 28 && shirtLength < 29) && (shirtSleeve >= 8.13 && shirtSleeve < 8.38)) {
-  console.log("S");
-}else if (((shirtWidth >= 20 && shirtWidth < 22) && (shirtLength >= 29 && shirtLength< 30) && (shirtSleeve >= 8.38 && shirtSleeve < 8.63))){
-  console.log("M");
-}else if (((shirtWidth >= 22 && shirtWidth < 24) && (shirtLength >= 30 && shirtLength< 31) && (shirtSleeve >= 8.63 && shirtSleeve < 8.88))){
-  console.log("L");
-}else if (((shirtWidth >= 24 && shirtWidth < 26) && (shirtLength >= 31 && shirtLength< 33) && (shirtSleeve >= 8.88 && shirtSleeve < 9.63))){
-  console.log("XL");
-}else if (((shirtWidth >= 26 && shirtWidth < 28) && (shirtLength >= 33 && shirtLength< 34) && (shirtSleeve >= 9.63 && shirtSleeve < 10.13))){
-  console.log("2XL");
-}else if (((shirtWidth >= 28 ) && (shirtLength >= 34) && (shirtSleeve >= 10.13))){
-  console.log("3XL");
-} else {
-    console.log("N/A");
-}
-/////////////////////////////////////////////////////////////////////////////
-
-
-/*
- * Programming Quiz - Navigating the Food Chain (3-8)
- *
- * Use a series of ternary operator to set the category to one of the following:
- *   - var color;
- *   - "carnivore" if an animal eats animals
- *   - "omnivore" if an animal eats plants and animals
- *   - undefined if an animal doesn't eat plants or animals
- *
- * Notes
- *   - use the variables `eatsPlants` and `eatsAnimals` in your ternary expressions
- *   - `if` statements aren't allowed ;-)
- */
-
-// change the values of `eatsPlants` and `eatsAnimals` to test your code
-var eatsPlants = false;
-var eatsAnimals = true;
-
-// var category = eatsPlants && eatsAnimals ? "omnivore" : eatsPlants ? "herbivore" : eatsAnimals ? "carnivore" : undefined;
-
-var category = eatsPlants ? (eatsAnimals ? "omnivore" : "herbivore") : (eatsAnimals ? "carnivore" : undefined);
-
-console.log(category);
-
-// conditional ? (if condition is true) : (if condition is false)
-
-/////////////////////////////////////////////////////////////////////////////
-
-
-/*
- * Programming Quiz: Back to School (3-9)
- */
-
-// change the value of `education` to test your code
-var education = "an Associate's degree";
-
-// set the value of this based on a person's education
-var salary;
-
-// your code goes here
-
-
-switch (education) {
- case "no high school diploma":
-   salary ="$25,636";
-   break;
-  case "a high school diploma":
-    salary = "$35,256";
-   break;
-  case "an Associate's degree":
-    salary = "$41,496";
-     break;
-  case "a Bachelor's degree":
-    salary ="$59,124";
-     break;
-  case "a Master's degree":
-    salary ="$69,732";
-     break;
-  case "a Professional degree":
-    salary ="$89,960";
-     break;
-  case "a Doctoral degree":
-    salary = "$84,396";
-
-}
-            // In 2015, a person with __________ earned an average of __________/year.
-console.log("In 2015, a person with " + education + " earned an average of " + salary + "/year.")
-
-////////////////////////////// IF ELSE /////////////////////////////////////////////
-
-
-
-var option = 3;
-
-if (option === 1) {
-  console.log("you selected 1");
-} else if (option === 2) {
-  console.log("you selected 2");
-} else if (option === 3) {
-  console.log("you selected 3");
-}
-
-if (option === 1) {
-  console.log("You selected option 1.");
-} else if (option === 2) {
-  console.log("You selected option 2.");
-} else if (option === 3) {
-  console.log("You selected option 3.");
-}
-
-
-
-///////////////////////// Switch statements /////////////////////////////////////
-
-
-
-
-switch (option) {
-  case 1:
-    console.log("You selected option 1.");
-  case 2:
-    console.log("You selected option 2.");
-  case 3:
-    console.log("You selected option 3.");
-  case 4:
-    console.log("You selected option 4.");
-  case 5:
-    console.log("You selected option 5.");
-  case 6:
-    console.log("You selected option 6.");
-}
-
-
-
-var option = 3;
-
-switch (option) {
-  case 1:
-  console.log("you selected 1");
-    break;
-  default:
-switch (option) {
-  case 2:
-  console.log("you selected 2")
-    break;
-switch (option) {
-  case 3:
-  console.log("you selected 3")
-    break;
-
-}
-
-var option = 2;
-
-switch (option) {
-  case 1:
-console.log("you selected 1");
-    break;
-  case 2:
-console.log("you selected 2");
-
-case 3:
-console.log("you selected 3");
-
-
-
-var x = 1;
-while (x < 10) {
-  x = x + 1;
-console.log(x);
-}
-
-///////////////////////// FIZZ Buzz //////////////////////////////////////////
-
-var x =1;
-
-while ( x <= 25){
-
-if (( x % 3 === 0 ) && (y % 5 === 0)) {
-  console.log( "conzbuzz");
-} else if (x % 3 === 0) {
-    console.log("conz");
-  } else if (x % 5 === 0) {
-    console.log("buzz");
-  } else {
-    console.log(x);
-  }
-
-  x = x + 1;
-}
-
-
-///////////////////////////////  //////////////////////////////////////////
-
-
-/*
- * Programming Quiz: Find my Seat (4-8)
- *
- * Write a nested for loop to print out all of the different seat combinations in the theater.
- * The first row-seat combination should be 0-0
- * The last row-seat combination will be 25-99
- *
- * Things to note:
- *  - the row and seat numbers start at 0, not 1
- *  - the highest seat number is 99, not 100
- */
-
-// Write your code here
-
-for(var x = 0; x<=25; x++){
-    for(var y = 0; y <=99; y ++){
-        console.log(x+"-"+y);
-    }
-}
-
-
-/*
- * Programming Quiz: Laugh it Off 1 (5-1)
- */
-
-// your code goes here
-
-
-function laugh() {
-    var message = "hahahahahahahahahaha!";
-    return message;
-}
-console.log(laugh());
-
-/*
- * Programming Quiz: Laugh it Off 2 (5-2)
- *
- * Write a function called `laugh` with a parameter named `num` that represents the number of "ha"s to return.
- *
- * Note:
- *  - make sure your the final character is an exclamation mark ("!")
- */
-
-function laugh (num) {
-    var ha = "";
-    for(i=0; i < num; i++) {
-        ha = ha + "ha"
-    };
-    return ha + "!";
-} console.log(laugh(3));
-
-
-
-
-
-/*  Prime Number Checker */
-
-
-
-function isPrime(integer) {
-
-     for(var x = 2; x < integer; x ++) {
-          if (integer % x === 0) {
-               console.log(integer + ' is divisble by ' + x );
-
-                   return false;
-
-          }
-       return true;
+       console.log("Person " + (i + 1)  + ' is ' + ages[i] + " and is of full age ");
+       fullAges.push(true);
      }
 
-   }
+     else {
+        console.log("Person " + (i + 1) + ' is ' + ages[i] + " and is NOT of full age ");
+       fullAges.push(false);
+     }
 
-
-
-
-
-   function addTen(x) {
-  return x + 10;
-}
-
-function divideByThree(y) {
-  return y / 3;
-}
-
-var result = addTen(2);
-console.log(divideByThree(result));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Scope Librarian Example
-
-TIP: The JavaScript language is constantly improving. One of these updates introduces a new type of scope, called Block scope. Check out our ES6 course to learn more!
-Q 1 OF 2
-
-Which of these variables a, b, c, or d, is defined in the global scope?*/
-
-var a = 1;
-function x() {
-  var b = 2;
-  function y() {
-    var c = 3;
-    function z() {
-      var d = 4;
-    }
-    z();
   }
-  y();
+
+  return fullAges;
 }
 
-x();
-
-
-// Where can you print out the value of variable c without resulting in an error?
-
-var a = 1;
-function x() {
-  var b = 2;
-  function y() {
-    var c = 3;
-    function z() {
-      var d = 4;
-    }
-    z();
-  }
-  y();
-}
-
-x();
-
-
-
-/////////////////////
-
-function findAvg(a, b) {
-
-var answer = (a + b ) / 2;
-
-return answer;
-
-}
-
-findAvg(10,100);
-
-
-function sayHi(name) {
-
-var greeting = "hello";
-console.log( greeting + " " name);
-
-}
-
-sayHi(con);
-
-
-/*
- * Programming Quiz: Build A Triangle (5-3)
- */
-
-// creates a line of * for a given length
-function makeLine(length) {
-    var line = "";
-    for (var j = 1; j <= length; j++) {
-        line += "* ";
-    }
-    return line + "\n";
-}
-
-function buildTriangle(width){
-    var triangle = "";
-    for(var i = 1; i <= width; i ++) {
-     triangle += makeLine(i);
-
-    }
-    return triangle;
-}
-
-console.log(buildTriangle(10));
-
-// your code goes here.  Make sure you call makeLine() in your own code.
-
-
-
-
-/*
- * Programming Quiz: Reverse string function
-*/
-
-
-function reverseString(reverseMe) {
-
-  var reversed = "";
-
-  for (var i = reverseMe.lenght - 1; i >= 0; i --) {
-
-      reversed += reverseMe[i];
-
-  };
-
-return reversed;
-
-}
-console.log(reverseString("ConAllen"));
-reverseMe("ConAllen");
-
-// declare
-// variable the string
-// loop over the string
-//
-
-/*
- * Passing functions into functions
-*/
-
-var catSays = function(max) {
-  var catMessage = "";
-  for (var i = 0; i < max; i++) {
-    catMessage += "meow ";
-  }
-  return catMessage;
-};
-
-// function declaration helloCat accepting a callback
-function helloCat(callbackFunc) {
-  return "Hello " + callbackFunc(3);
-}
-
-// pass in catSays as a callback function
-helloCat(catSays);
-
-
-// Function expression that assigns the function displayFavorite
-// to the variable favoriteMovie
-var favoriteMovie = function displayFavorite(movieName) {
-  console.log("My favorite movie is " + movieName);
-};
-
-// Function declaration that has two parameters: a function for displaying
-// a message, along with a name of a movie
-function movies(messageFunction, name) {
-  messageFunction(name);
-}
-
-// Call the movies function, pass in the favoriteMovie function and name of movie
-movies(favoriteMovie, "Finding Nemo");
-
-
-
-
-var favoriteMovie = function displayMovie(movieName) {
-
-      console.log( "My fav movie is "  + movieName);
-};
-
-function movies(messageFunction, name ) {
-  messageFunction(name);
-
-}
-
-movies(favoriteMovie, "blade runner");
-
-
-
-
-
-
-//////////////////////////////// Rup ///////////////////////////////////////
-
-function cat(num) {
-
-var rup = "";
-for(i=0;i<num;i++){
-  rup = rup + " rup"
-}
-return rup;
-
-}
-console.log(cat(3));
-
-
-
-
-var catSays = function(max) {
-  var catMessage = "";
-  for (var i = 0; i < max; i++) {
-    catMessage += "meow ";
-  }
-  return catMessage;
-};
-
-console.log(catSays());
-
-
-
-////////////////////////////////////    Functions as parameters      ///////////
-
-
-var catSays = function(max) {
-  var catMessage = "";
-  for (var i = 0; i < max; i++) {
-    catMessage += "meow ";
-  }
-  return catMessage;
-};
-
-// function declaration helloCat accepting a callback
-function helloCat(callbackFunc) {
-  return "Hello " + callbackFunc(3);
-}
-
-// pass in catSays as a callback function
-helloCat(catSays);
-
-
-
-
-
-var conSays = function(num){
-  var conMsg = "";
-  for(var i = 0; i < num; i++){
-    conMsg += " there "
-  };
-  return conMsg;
-}
-
-function whatsUp(callBackFunct) {
-  return "Hello, " + callBackFunct(2);
-}
-
-whatsUp(conSays);
-
-
-/////////////////////////////////Named function expressions//////////////////////
-
-
-
-var movieName = function(favMov){
-  return "Lord of the Rings";
-}
-
-movieName();
-
-
-
-
-
-var favoriteMovie = function displayFav(movieName) {
-
-  console.log("my fav mov is " + movieName);
-
-}
-
-function movies (message, name) {
-  message(name);
-}
-
-movies(favoriteMovie, "L.O.T.R");
-
-
-
-
-
-// Function declaration that takes in two arguments: a function for displaying
-// a message, along with a name of a movie
-function movies(messageFunction, name) {
-  messageFunction(name);
-}
-
-// Call the movies function, pass in the function and name of movie
-movies(function displayFavorite(movieName) {
-  console.log("My favorite movie is " + movieName);
-}, "Finding Nemo");
-
-
-
-///////////////////////////Inline Named function expressions//////////////////////
-
-
-function movies(messageFunction, name) {
-   messageFunction(name);
-}
-
-movies(function displayFavorite(movieName) {
-
-  console.log("my fav movie is " + movieName);
-}, "L.O.T.R");
-
-
-
-
-// anonymous function expression
-var doSomething = function(y) {
-  return y + 1;
-};
-
-var favoriteMovie = function displayFavorite(movieName) {
-  console.log("My favorite movie is " + movieName);
-};
-
-// Function declaration that has two parameters: a function for displaying
-// a message, along with a name of a movie
-function movies(messageFunction, name) {
-  messageFunction(name);
-}
-
-// Call the movies function, pass in the favoriteMovie function and name of movie
-movies(favoriteMovie, "Finding Nemo");
-
-//////////////////////////////////////////////////////////////////////////////
-
-
-
-//////////////////////////////////////////////////////////
-
-
-function emotions(myString, myFunct) {
-    console.log("I am " + myString + ", " + myFunct(2));
-};
-
-emotions(function displayLaugh(num) {
-      var ha = "";
-      for(i=1; i<= num; i++){
-          ha = ha + "ha"
-      };
-
-      return ha + "!";
-
-
-})
-
-
-
-
-//////////////////////////////////////////////////////////
-
-
-
-
-function movies(messageFunction, name) {
-  messageFunction(name);
-}
-
-// call the movies function, pass in the function and name of movie
-movies(function displayFavorite(movieName) {
-  console.log("My favorite movie is " + movieName);
-}, "Finding Nemo");
-
-
-
-
-
-
-
-
-
-function(num){
-    var ha = "";
-    for(i=1; i<= num; i++){
-        ha = ha + "ha"
-    };
-
-    return ha + "!";
-}
-
-
-
-
-
-
-
-/////////////////////////////////////////////// Arays //////////////////////////
-
-
-
-var donuts = ["glazed",
-              "chocolate frosted", "Boston creme",
-              "glazed cruller", "cinnamon sugar",
-              "sprinkled"];
-
-donuts.push("double choco");
-
-
-
-
-
-var donuts = ["glazed", "chocolate frosted", "Boston creme", "glazed cruller", "cinnamon sugar", "sprinkled", "powdered"];
-
-donuts.pop(); // pops "powdered" off the end of the `donuts` array
-donuts.pop(); // pops "sprinkled" off the end of the `donuts` array
-donuts.pop(); // pops "cinnamon sugar" off the end of the `donuts` array
-
-///////////////////////////// POP  ////////////////////////////////////////////
-
-
-var donuts = ["glazed", "strawberry frosted", "powdered", "Boston creme"];
-
-donuts.pop();
-donuts.pop();
-donuts.pop();
-donuts.push("maple walnut");
-donuts.pop();
-donuts.push("sprinkled");
-
-
-
-
-/////// Splice /////////////
-
-var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
-
-myFish.splice(2, 0, 'drum'); // insert 'drum' at 2-index position
-// myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]
-
-myFish.splice(2, 1); // remove 1 item at 2-index position (that is, "drum")
-// myFish is ["angel", "clown", "mandarin", "sturgeon"]
-
-
-var myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
-var removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue');
-
-// myFish is ["parrot", "anemone", "blue", "trumpet", "sturgeon"]
-// removed is ["angel", "clown"]
-
-
-
-/*
- * Programming Quiz: Colors of the Rainbow (6-4)
- */
-
-var rainbow = ["Red", "Orange", "Blackberry", "Blue"];
-
-// your code goes here
-rainbow.splice(2,1);
-rainbow.push('Yellow','Green');
-rainbow.push('Purple');
-
-console.log(rainbow);
-
-
-/*
- * Programming Quiz: Quidditch Cup (6-5)
- */
-
-function hasEnoughPlayers(team) {
-      if (team.length >= 7) {
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-
-var team = ["Oliver Wood", "Angelina Johnson", "Katie Bell", "Alicia Spinnet", "George Weasley", "Fred Weasley", "Harry Potter"];
-console.log(hasEnoughPlayers(team));
+var years = [ 2000, 1988, 1983, 1984, 1990];
+var full_1 = printFullAge(years);
+var full_2 = printFullAge([2012, 1915,1999])
