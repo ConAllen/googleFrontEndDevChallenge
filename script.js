@@ -675,13 +675,238 @@ helloCat(catSays);
 var conSays = function(num){
   var conMsg = "";
   for(var i = 0; i < num; i++){
-    conMsg += " absolute rup "
+    conMsg += " there "
   };
   return conMsg;
 }
 
 function whatsUp(callBackFunct) {
-  return "wan " + callBackFunct(4);
+  return "Hello, " + callBackFunct(2);
 }
 
 whatsUp(conSays);
+
+
+/////////////////////////////////Named function expressions//////////////////////
+
+
+
+var movieName = function(favMov){
+  return "Lord of the Rings";
+}
+
+movieName();
+
+
+
+
+
+var favoriteMovie = function displayFav(movieName) {
+
+  console.log("my fav mov is " + movieName);
+
+}
+
+function movies (message, name) {
+  message(name);
+}
+
+movies(favoriteMovie, "L.O.T.R");
+
+
+
+
+
+// Function declaration that takes in two arguments: a function for displaying
+// a message, along with a name of a movie
+function movies(messageFunction, name) {
+  messageFunction(name);
+}
+
+// Call the movies function, pass in the function and name of movie
+movies(function displayFavorite(movieName) {
+  console.log("My favorite movie is " + movieName);
+}, "Finding Nemo");
+
+
+
+///////////////////////////Inline Named function expressions//////////////////////
+
+
+function movies(messageFunction, name) {
+   messageFunction(name);
+}
+
+movies(function displayFavorite(movieName) {
+
+  console.log("my fav movie is " + movieName);
+}, "L.O.T.R");
+
+
+
+
+// anonymous function expression
+var doSomething = function(y) {
+  return y + 1;
+};
+
+var favoriteMovie = function displayFavorite(movieName) {
+  console.log("My favorite movie is " + movieName);
+};
+
+// Function declaration that has two parameters: a function for displaying
+// a message, along with a name of a movie
+function movies(messageFunction, name) {
+  messageFunction(name);
+}
+
+// Call the movies function, pass in the favoriteMovie function and name of movie
+movies(favoriteMovie, "Finding Nemo");
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////
+
+
+function emotions(myString, myFunct) {
+    console.log("I am " + myString + ", " + myFunct(2));
+};
+
+emotions(function displayLaugh(num) {
+      var ha = "";
+      for(i=1; i<= num; i++){
+          ha = ha + "ha"
+      };
+
+      return ha + "!";
+
+
+})
+
+
+
+
+//////////////////////////////////////////////////////////
+
+
+
+
+function movies(messageFunction, name) {
+  messageFunction(name);
+}
+
+// call the movies function, pass in the function and name of movie
+movies(function displayFavorite(movieName) {
+  console.log("My favorite movie is " + movieName);
+}, "Finding Nemo");
+
+
+
+
+
+
+
+
+
+function(num){
+    var ha = "";
+    for(i=1; i<= num; i++){
+        ha = ha + "ha"
+    };
+
+    return ha + "!";
+}
+
+
+
+
+
+
+
+/////////////////////////////////////////////// Arays //////////////////////////
+
+
+
+var donuts = ["glazed",
+              "chocolate frosted", "Boston creme",
+              "glazed cruller", "cinnamon sugar",
+              "sprinkled"];
+
+donuts.push("double choco");
+
+
+
+
+
+var donuts = ["glazed", "chocolate frosted", "Boston creme", "glazed cruller", "cinnamon sugar", "sprinkled", "powdered"];
+
+donuts.pop(); // pops "powdered" off the end of the `donuts` array
+donuts.pop(); // pops "sprinkled" off the end of the `donuts` array
+donuts.pop(); // pops "cinnamon sugar" off the end of the `donuts` array
+
+///////////////////////////// POP  ////////////////////////////////////////////
+
+
+var donuts = ["glazed", "strawberry frosted", "powdered", "Boston creme"];
+
+donuts.pop();
+donuts.pop();
+donuts.pop();
+donuts.push("maple walnut");
+donuts.pop();
+donuts.push("sprinkled");
+
+
+
+
+/////// Splice /////////////
+
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+
+myFish.splice(2, 0, 'drum'); // insert 'drum' at 2-index position
+// myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]
+
+myFish.splice(2, 1); // remove 1 item at 2-index position (that is, "drum")
+// myFish is ["angel", "clown", "mandarin", "sturgeon"]
+
+
+var myFish = ['angel', 'clown', 'trumpet', 'sturgeon'];
+var removed = myFish.splice(0, 2, 'parrot', 'anemone', 'blue');
+
+// myFish is ["parrot", "anemone", "blue", "trumpet", "sturgeon"]
+// removed is ["angel", "clown"]
+
+
+
+/*
+ * Programming Quiz: Colors of the Rainbow (6-4)
+ */
+
+var rainbow = ["Red", "Orange", "Blackberry", "Blue"];
+
+// your code goes here
+rainbow.splice(2,1);
+rainbow.push('Yellow','Green');
+rainbow.push('Purple');
+
+console.log(rainbow);
+
+
+/*
+ * Programming Quiz: Quidditch Cup (6-5)
+ */
+
+function hasEnoughPlayers(team) {
+      if (team.length >= 7) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+
+var team = ["Oliver Wood", "Angelina Johnson", "Katie Bell", "Alicia Spinnet", "George Weasley", "Fred Weasley", "Harry Potter"];
+console.log(hasEnoughPlayers(team));
